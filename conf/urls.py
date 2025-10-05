@@ -1,5 +1,5 @@
 from django.contrib import admin
-from django.urls import path
+from django.urls import path,include
 
 from rest_framework_simplejwt.views import (
     TokenObtainPairView,
@@ -15,5 +15,5 @@ urlpatterns = [
     path('api/token/verify/',TokenVerifyView.as_view(), name='token_verify'),
 
     #APPS
-    # path('api/home/', )
+    path('', include('users.urls'))
 ]
